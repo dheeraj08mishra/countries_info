@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather+Sans&family=Montserrat&family=Sacramento&display=swap");
+
+:root {
+    font-family: "Merriweather Sans", sans-serif;
+    --nav-color: #675d50;
+    --nav-text: #fff;
+    --primary-color: #f3deba;
+    --secondary-color: #ebf1eb;
+    --hover-color: #a9907e;
+    --button-bg: #abc4aa;
+    --button-text: #fff;
+    --button-hover-bg: #a9907e;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Merriweather Sans", sans-serif;
+    background-color: var(--primary-color);
+}
+
+.container {
+    display: flex;
+    /* Make container a flexbox */
+    justify-content: space-between;
+    /* Distribute items with space between */
+    align-items: center;
+    /* Vertically center the items */
+    background-color: var(--nav-color);
+    font-size: 1.2rem;
+    font-family: "Merriweather Sans", sans-serif;
+    height: 70px;
+    padding: 0 20px;
+    /* Optional padding to give some space */
+}
+
+.navBar {
+    display: flex;
+    justify-content: space-between;
+    /* Align nav to the right */
+    align-items: center;
+    /* Vertically center the nav */
+}
+
+.navBar ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+.navBar ul li {
+    padding: 10px 15px;
+    margin: 0 10px;
+}
+
+.navBar ul li a {
+    text-decoration: none;
+    color: var(--nav-text);
+    font-weight: bold;
+}
+
+.navBar ul li a:hover {
+    color: var(--hover-color);
+}
+
+.countries-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    /* Create responsive columns */
+    gap: 30px;
+    /* Add space between grid items */
+    padding: 30px;
+}
+
+.country-card {
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s;
+}
+
+.country-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-bottom: 2px solid var(--hover-color);
+}
+
+.country-card:hover {
+    transform: scale(1.05);
+    /* Slight zoom on hover */
+}
+
+.country-card h2,
+h4 {
+    margin: 10px 0;
+    color: #333;
+}
