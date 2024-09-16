@@ -1,38 +1,32 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const SortBy = ({ data, setCountriesData }) => {
-  const [sortBy, setSortBy] = useState("");
+  const [sortBy, setSortBy] = useState("name");
 
-  const handleSortData = (event) => {
-    const selectedValue = event.target.value;
-    setSortBy(selectedValue);
-    let sortedData = [];
+  useEffect(() => {
+    const sortData = () => {
+      let sortedData = [];
+      if (sortBy === "name") {
+        sortedData = [...data].sort((a, b) =>
+          a.name.common.localeCompare(b.name.common)
+        );
+      } else if (sortBy === "population") {
+        sortedData = [...data].sort((a, b) => a.population - b.population);
+      }
+      setCountriesData(sortedData);
+    };
 
-    // Default case when no sort option is selected
-    if (selectedValue === "") {
-      setCountriesData(data);
-    }
-    // Sort by name
-    else if (selectedValue === "name") {
-      sortedData = [...data].sort((currentRow, nextRow) =>
-        currentRow.name.common.localeCompare(nextRow.name.common)
-      );
-      setCountriesData(sortedData);
-    }
-    // Sort by population
-    else if (selectedValue === "population") {
-      sortedData = [...data].sort(
-        (currentRow, nextRow) => currentRow.population - nextRow.population
-      );
-      setCountriesData(sortedData);
-    }
+    sortData();
+  }, [sortBy, data, setCountriesData]);
+
+  const handleSortChange = (event) => {
+    setSortBy(event.target.value);
   };
 
   return (
     <div className="sort-by">
       <label htmlFor="sort-by">Sort by:</label>
-      <select id="sort-by" value={sortBy} onChange={handleSortData}>
-        <option value="">Default</option>
+      <select id="sort-by" value={sortBy} onChange={handleSortChange}>
         <option value="name">Name</option>
         <option value="population">Population</option>
       </select>
