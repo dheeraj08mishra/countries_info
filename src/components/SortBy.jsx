@@ -32,7 +32,7 @@ const SortBy = ({ data, setCountriesData }) => {
     <div className="sort-by">
       <label htmlFor="sort-by">Sort by:</label>
       <select id="sort-by" value={sortBy} onChange={handleSortData}>
-        <option value="">Select Sorting</option>
+        <option value="">Default</option>
         <option value="name">Name</option>
         <option value="population">Population</option>
       </select>
