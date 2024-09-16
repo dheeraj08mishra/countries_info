@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
+import Search from "./Search";
+import SortBy from "./SortBy";
 
 const Body = () => {
   const [CountriesData, setCountriesData] = useState([]);
   const [data, setData] = useState([]);
-  const [searchValue, setSearchValue] = useState("");
+
   useEffect(() => {
     const fetchCountries = async () => {
       const response = await fetch("https://restcountries.com/v3.1/all");
@@ -14,27 +16,12 @@ const Body = () => {
     fetchCountries();
   }, []);
 
-  const inputValueForSearch = (event) => {
-    setSearchValue(event.target.value);
-    const filteredData = data.filter((currentRow) =>
-      currentRow.name.common
-        .toLowerCase()
-        .includes(event.target.value.toLowerCase())
-    );
-    setCountriesData(filteredData);
-  };
-
   return (
     <>
-      <div className="search-container">
-        <input
-          type="text"
-          placeholder="Search countries..."
-          onChange={inputValueForSearch}
-          value={searchValue}
-        />
+      <div className="controls-container">
+        <Search data={data} setCountriesData={setCountriesData} />
+        <SortBy data={data} setCountriesData={setCountriesData} />
       </div>
-
       <div className="countries-grid">
         {CountriesData.length > 0 ? (
           CountriesData.map((country, index) => {
