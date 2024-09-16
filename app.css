@@ -101,3 +101,89 @@ h4 {
     margin: 10px 0;
     color: #333;
 }
+
+/* Styling for the search input and button */
+/* Search container styling remains the same */
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.search-container input[type="text"] {
+    width: 300px;
+    padding: 10px;
+    border: 2px solid var(--hover-color);
+    border-radius: 5px 0 0 5px;
+    font-size: 16px;
+    outline: none;
+}
+
+.search-container button {
+    padding: 10px 20px;
+    border: none;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+    transition: background-color 0.3s;
+}
+
+.search-container button:hover {
+    background-color: var(--button-hover-bg);
+}
+
+/* Update the grid to center items when there are fewer results */
+.countries-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    /* Add space between grid items */
+    padding: 30px;
+    justify-content: center;
+    /* Center items in the grid */
+}
+
+/* Country card with spacing adjustments */
+.country-card {
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+    margin: 15px;
+    /* Add margin for spacing between cards */
+    transition: transform 0.3s;
+    width: 90%;
+    max-width: 300px;
+    /* Limit the size for smaller screens */
+}
+
+.country-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-bottom: 2px solid var(--hover-color);
+}
+
+.country-card:hover {
+    transform: scale(1.05);
+}
+
+.country-card h2,
+.country-card h4 {
+    margin: 10px 0;
+    color: #333;
+}
+
+/* Centered message when no results are found */
+.no-results {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #555;
+    margin-top: 20px;
+    grid-column: span 3;
+    /* Span the entire grid */
+}
