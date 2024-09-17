@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from "react";
 const FilterByRegion = ({ data, setCountriesData }) => {
-  console.log(data, setCountriesData);
-
   const [regionValue, setRegionValue] = useState("");
-
   useEffect(() => {
     const filterInfo = () => {
       let filterData = [];
