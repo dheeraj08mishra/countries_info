@@ -5,8 +5,6 @@ const FilterByRegion = ({ data, setCountriesData }) => {
   const [regionValue, setRegionValue] = useState("");
 
   useEffect(() => {
-    dataTopush = [...data].map((country) => console.log(country.region));
-
     const filterInfo = () => {
       let filterData = [];
       if (regionValue === "Africa") {
