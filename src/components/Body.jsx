@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Search from "./Search";
 import SortBy from "./SortBy";
+import FilterByRegion from "./FilterByRegion";
 
 const Body = () => {
   const [CountriesData, setCountriesData] = useState([]);
@@ -21,6 +22,7 @@ const Body = () => {
       <div className="controls-container">
         <Search data={data} setCountriesData={setCountriesData} />
         <SortBy data={data} setCountriesData={setCountriesData} />
+        <FilterByRegion data={data} setCountriesData={setCountriesData} />
       </div>
       <div className="countries-grid">
         {CountriesData.length > 0 ? (

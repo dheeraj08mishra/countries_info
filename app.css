@@ -267,3 +267,24 @@ body {
     cursor: pointer;
     /* transition: border-color 0.3s, background-color 0.3s, color 0.3s; */
 }
+
+/* filter by region */
+.filter-by-region {
+    display: flex;
+    align-items: center;
+}
+
+.filter-by-region label {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-right: 10px;
+    color: #333;
+}
+
+.filter-by-region select {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid var(--hover-color);
+    /* border-radius: 5px; */
+    outline: none;
+}
