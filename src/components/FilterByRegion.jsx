@@ -3,26 +3,10 @@ const FilterByRegion = ({ data, setCountriesData }) => {
   const [regionValue, setRegionValue] = useState("");
   useEffect(() => {
     const filterInfo = () => {
-      let filterData = [];
-      if (regionValue === "Africa") {
-        filterData = [...data].filter((country) => country.region === "Africa");
-      } else if (regionValue === "Americas") {
-        filterData = [...data].filter(
-          (country) => country.region === "Americas"
-        );
-      } else if (regionValue === "Asia") {
-        filterData = [...data].filter((country) => country.region === "Asia");
-      } else if (regionValue === "Europe") {
-        filterData = [...data].filter((country) => country.region === "Europe");
-      } else if (regionValue === "Oceania") {
-        filterData = [...data].filter(
-          (country) => country.region === "Oceania"
-        );
-      } else if (regionValue === "") {
-        filterData = [...data];
-      } else if (regionValue === "Antarctic") {
-        filterData = [...data].filter(
-          (country) => country.region === "Antarctic"
+      let filterData = [...data];
+      if (regionValue) {
+        filterData = filterData.filter(
+          (country) => country.region === regionValue
         );
       }
       setCountriesData(filterData);
@@ -30,6 +14,7 @@ const FilterByRegion = ({ data, setCountriesData }) => {
 
     filterInfo();
   }, [regionValue, data, setCountriesData]);
+
   return (
     <div className="filter-by-region">
       <label htmlFor="filter-by-region">Filter by Region:</label>
