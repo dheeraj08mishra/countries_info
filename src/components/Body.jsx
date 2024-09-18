@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Search from "./Search";
 import SortBy from "./SortBy";
 import FilterByRegion from "./FilterByRegion";
+import Shimmer from "./Shimmer";
 
 const Body = () => {
   const [CountriesData, setCountriesData] = useState([]);
@@ -39,7 +40,7 @@ const Body = () => {
             );
           })
         ) : (
-          <div className="no-results">No countries found</div>
+          <Shimmer />
         )}
       </div>
     </>
