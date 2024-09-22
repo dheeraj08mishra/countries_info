@@ -3,6 +3,7 @@ import Search from "./Search";
 import SortBy from "./SortBy";
 import FilterByRegion from "./FilterByRegion";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 const Body = () => {
   const [CountriesData, setCountriesData] = useState([]);
@@ -31,11 +32,13 @@ const Body = () => {
             const { flags, name, region, capital, population } = country;
             return (
               <div key={index} className="country-card">
-                <img src={flags.png} alt={name.common} />
-                <h2>{name.common}</h2>
-                <h4>Region: {region}</h4>
-                <h4>Capital: {capital}</h4>
-                <h4>Population: {population.toLocaleString()}</h4>
+                <Link to={`/name/${name.common}`}>
+                  <img src={flags.png} alt={name.common} />
+                  <h2>{name.common}</h2>
+                  <h4>Region: {region}</h4>
+                  <h4>Capital: {capital}</h4>
+                  <h4>Population: {population.toLocaleString()}</h4>
+                </Link>
               </div>
             );
           })

@@ -328,3 +328,59 @@ body {
         left: 100%;
     }
 }
+
+
+
+.country-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* Ensure space between the flag and info */
+    padding: 20px;
+    /* background-color: var(--secondary-color); */
+
+
+    margin: 20px 0;
+}
+
+.country-flag {
+    flex: 2;
+    /* Allow flag to take 1 part of the space */
+    display: flex;
+    justify-content: center;
+    /* Center the flag */
+    align-items: center;
+}
+
+.country-flag img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.country-info {
+    flex: 2;
+    /* Allow country info to take 2 parts of the space */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    /* Space the info evenly */
+    margin-left: 40px;
+    /* Add space between flag and info */
+}
+
+.country-info h1 {
+    font-size: 2rem;
+    color: var(--nav-color);
+}
+
+.country-info h4 {
+    margin: 10px 0;
+    color: #333;
+}
+
+.country-info h4 span {
+    font-weight: bold;
+    color: var(--hover-color);
+}

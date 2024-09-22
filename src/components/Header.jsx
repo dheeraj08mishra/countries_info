@@ -6,7 +6,7 @@ const Header = () => {
         <nav>
           <ul>
             <li>
-              <a>Where in the world?</a>
+              <Link to="/">Where in the world?</Link>
             </li>
             <li>
               <a>Dark Mode</a>
