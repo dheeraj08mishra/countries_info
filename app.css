@@ -384,3 +384,54 @@ body {
     font-weight: bold;
     color: var(--hover-color);
 }
+
+
+
+
+.country-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 20px;
+    gap: 40px;
+    /* Adds space between the flag and the info */
+}
+
+
+
+
+.border-countries {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.border-countries a {
+    padding: 6px 12px;
+    background-color: var(--hover-color, #0056b3);
+    color: #02181a;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .country-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .country-flag img {
+        max-width: 100%;
+        max-height: 250px;
+    }
+
+    .country-info {
+        width: 100%;
+    }
+}
