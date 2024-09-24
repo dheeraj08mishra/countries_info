@@ -166,12 +166,7 @@ body {
     font-family: "Merriweather Sans", sans-serif;
 } */
 
-.sort-by label {
-    font-size: 1.1rem;
-    font-weight: bold;
-    margin-right: 10px;
-    color: #333;
-}
+
 
 /* Styling for the SortBy component */
 .sort-by {
@@ -249,13 +244,6 @@ body {
     color: #333;
 }
 
-.sort-by select {
-    padding: 10px;
-    font-size: 16px;
-    border: 2px solid var(--hover-color);
-    /* border-radius: 5px; */
-    outline: none;
-}
 
 .sort-by select {
     padding: 8px 12px;
@@ -329,20 +317,6 @@ body {
     }
 }
 
-
-
-.country-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    /* Ensure space between the flag and info */
-    padding: 20px;
-    /* background-color: var(--secondary-color); */
-
-
-    margin: 20px 0;
-}
-
 .country-flag {
     flex: 2;
     /* Allow flag to take 1 part of the space */
@@ -353,7 +327,8 @@ body {
 }
 
 .country-flag img {
-    max-width: 100%;
+    max-width: 300px;
+    /* max-height: 200px; */
     height: auto;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -367,6 +342,7 @@ body {
     justify-content: space-around;
     /* Space the info evenly */
     margin-left: 40px;
+    gap: 20px;
     /* Add space between flag and info */
 }
 
@@ -385,9 +361,6 @@ body {
     color: var(--hover-color);
 }
 
-
-
-
 .country-container {
     display: flex;
     align-items: flex-start;
@@ -395,6 +368,25 @@ body {
     padding: 20px;
     gap: 40px;
     /* Adds space between the flag and the info */
+}
+
+button {
+    position: absolute;
+    left: 20px;
+    background-color: #544935;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--hover-color, #0056b3);
 }
 
 
@@ -434,4 +426,63 @@ body {
     .country-info {
         width: 100%;
     }
+}
+
+
+/* * Dark mode colors */
+body.dark-mode {
+    --nav-color: #1e1e1e;
+    --nav-text: #fff;
+    --primary-color: #2b2b2b;
+    --secondary-color: #3b3b3b;
+    --hover-color: #505050;
+    --button-bg: #444;
+    --button-text: #fff;
+    --button-hover-bg: #555;
+    background-color: var(--primary-color);
+    color: var(--nav-text);
+}
+
+body.dark-mode a {
+    color: var(--nav-text);
+}
+
+body.dark-mode .container {
+    background-color: var(--nav-color);
+}
+
+body.dark-mode .country-card {
+    background-color: #fff;
+}
+
+body.dark-mode .country-info h4 span {
+    color: var(--hover-color);
+}
+
+body.dark-mode button {
+    background-color: var(--button-bg);
+}
+
+body.dark-mode button:hover {
+    background-color: var(--button-hover-bg);
+}
+
+body.dark-mode .border-countries a {
+    background-color: var(--hover-color);
+    color: var(--nav-text);
+}
+
+
+
+body.dark-mode .filter-by-region label {
+
+    color: #fff;
+}
+
+body.dark-mode .sort-by label {
+    color: #fff;
+}
+
+body.dark-mode .country-container {
+    background-color: #fff;
 }
